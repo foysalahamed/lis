@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/dist/jasperreports-4.7.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/dist/jasperreports-applet-4.7.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/dist/jasperreports-fonts-4.7.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/dist/jasperreports-javaflow-4.7.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/ant-1.7.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/barcode4j-2.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-anim.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-dom.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-ext.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-parser.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-script.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-svggen.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-util.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/batik-xml.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/bcel-5.2.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/castor-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/groovy-all-1.7.5.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/hsqldb-1.8.0-10.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jackson-core-asl-1.9.4.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jackson-mapper-asl-1.9.4.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jaxen-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jcommon-1.0.15.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jdt-compiler-3.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jfreechart-1.0.12.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jpa.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/jxl-2.6.10.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/mondrian-3.1.1.12687.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/png-encoder-1.5.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/poi-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/poi-ooxml-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/poi-ooxml-schemas-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/rhino-1.7R1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/saaj-api-1.3.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/serializer.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/servlet-api-2.4.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/spring-beans-2.5.5.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/spring-core-2.5.5.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/velocity-1.7-dep.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/xalan-2.7.1.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/xbean.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/xercesImpl-2.7.0.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="E:/jaspersoft jar/lib/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="E:/POS jar and supporting file/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="E:/POS jar and supporting file/rs2xml.jar"/>
+	<classpathentry kind="lib" path="E:/POS jar and supporting file/Parse-1.7.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
