@@ -393,22 +393,22 @@ try {
 	        		
 	        		for(int r=0;r<table.getRowCount();r++){
 		        		
-	        			String query="insert into LIS_RESULT_SETUP values(?,?,?,?,?,?,?,?,?,?)";
+	        			String query="insert into LIS_RESULT_SETUP values(?,?,?,?,?,?,?,?,?)";
 		        			try {
 								PreparedStatement prst=connection.prepareStatement(query);
 								prst.setString(1,comboBoxCourseID.getSelectedItem().toString() );
-								prst.setString(2,textFieldCourseName.getText() );
+//								prst.setString(2,textFieldCourseName.getText() );
 
-								prst.setString(3, table.getValueAt(r, 0).toString());//stu id
-								prst.setString(4,comboBoxYear.getSelectedItem().toString() );
-								prst.setString(5, comboBoxExamID.getSelectedItem().toString() );		
-								prst.setString(6,((JTextField)dateChooserExamDate.getDateEditor().getUiComponent()).getText() );
-								prst.setString(7,grdeCalculate(Double.parseDouble(table.getValueAt(r, 4).toString()) ));
+								prst.setString(2, table.getValueAt(r, 0).toString());//stu id
+								prst.setString(3,comboBoxYear.getSelectedItem().toString() );
+								prst.setString(4, comboBoxExamID.getSelectedItem().toString() );		
+								prst.setString(5,((JTextField)dateChooserExamDate.getDateEditor().getUiComponent()).getText() );
+								prst.setString(6,grdeCalculate(Double.parseDouble(table.getValueAt(r, 4).toString()) ));
 
-								prst.setDouble(8, (double)getGPA(Double.parseDouble(table.getValueAt(r, 4).toString())));
-								prst.setDouble(9, Double.parseDouble(table.getValueAt(r, 4).toString()));
+								prst.setDouble(7, (double)getGPA(Double.parseDouble(table.getValueAt(r, 4).toString())));
+								prst.setDouble(8, Double.parseDouble(table.getValueAt(r, 4).toString()));
 
-								prst.setString(10, table.getValueAt(r, 5).toString());			        			
+								prst.setString(9, table.getValueAt(r, 5).toString());			        			
 			        			prst.executeQuery();
 							} catch (Exception e) {
 								// TODO: handle exception

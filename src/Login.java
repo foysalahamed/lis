@@ -196,6 +196,7 @@ public void login(){
 		
 		
 		try {
+//			String query="select * from lis_password_settings where employeeid='"+employeeID+"' and password='"+md5pass+"'";
 			String query="select * from lis_password_settings where employeeid='"+employeeID+"' and password='"+md5pass+"'";
 			PreparedStatement prst=conn.prepareStatement(query);
 			ResultSet result=prst.executeQuery();

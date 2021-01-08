@@ -1793,8 +1793,10 @@ public class Home extends JFrame {
 	}
 	protected void getTuitionFee(String yr, String stu_id,String monthly,String monthName) {
 		//String query="Select product_name,sales_price from productdetails where product_id='"+product+"'";
-		String f_id="tuitionfee";
-		String query="Select * from lis_fee_setup where applicable_for='"+yr+"' and fee_id='"+f_id+"'";//this is for offer query
+		String f_id="tuition21";
+		System.out.println("Student ID:"+stu_id);
+//		String query="Select * from lis_fee_setup where applicable_for='"+yr+"' and fee_id='"+f_id+"'";//this is for offer query
+		String query="Select * from lis_fee_setup where  fee_id='"+f_id+"'";//this is for offer query
 
 		try {
 			PreparedStatement prstatement=connection.prepareStatement(query);

@@ -143,7 +143,7 @@ public class AttendanceCheck extends JFrame {
 				String dFrom=((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText();
 				String dto=((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText();
 				String query="select * from LIS_STUDENTS_ATTENDANCE where stu_id='"+stuid+"' and attn_date between '"+dFrom+"' and '"+dto+"' order by attn_date asc";
-				String rpPath="C:\\Users\\creativepc\\Desktop\\LIS\\reportAttendance.jrxml";
+				String rpPath="C:\\lis\\report\\reportAttendance.jrxml";
 				report( dFrom, dto,query,rpPath);
 			}
 		});
@@ -220,7 +220,7 @@ public class AttendanceCheck extends JFrame {
 				 
 				 
 					
-				String rpPath="C:\\Users\\creativepc\\Desktop\\LIS\\empAttendanceReport.jrxml";
+				String rpPath="C:\\lis\\report\\empAttendanceReport.jrxml";
 				report( dFrom, dto,query,rpPath);
 			}
 		});
@@ -246,13 +246,13 @@ public class AttendanceCheck extends JFrame {
 		scrollPane_1.setViewportView(tableEmpAttn);
 		
 		JLabel lblStudentsAttendance = new JLabel("Students Attendance");
-		lblStudentsAttendance.setForeground(new Color(255, 228, 181));
+		lblStudentsAttendance.setForeground(new Color(210, 105, 30));
 		lblStudentsAttendance.setBounds(71, 83, 212, 28);
 		contentPane.add(lblStudentsAttendance);
 		lblStudentsAttendance.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		JLabel lblEmployeeAttendance = new JLabel("Employee Attendance");
-		lblEmployeeAttendance.setForeground(new Color(255, 228, 181));
+		lblEmployeeAttendance.setForeground(new Color(210, 105, 30));
 		lblEmployeeAttendance.setBounds(662, 84, 212, 28);
 		contentPane.add(lblEmployeeAttendance);
 		lblEmployeeAttendance.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -271,7 +271,7 @@ public class AttendanceCheck extends JFrame {
 		lblEmpAttn.setIcon(new ImageIcon(imgemp));
 		
 		JLabel lblEmployeeAttendanceTime = new JLabel("Employee Attendance Time Setup");
-		lblEmployeeAttendanceTime.setForeground(new Color(255, 228, 181));
+		lblEmployeeAttendanceTime.setForeground(new Color(210, 105, 30));
 		lblEmployeeAttendanceTime.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblEmployeeAttendanceTime.setBounds(662, 415, 323, 28);
 		contentPane.add(lblEmployeeAttendanceTime);

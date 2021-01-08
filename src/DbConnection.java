@@ -13,7 +13,8 @@ public class DbConnection {
 	public static  Connection dbconnection() throws SQLException {
 		try {
 			   Class.forName("oracle.jdbc.driver.OracleDriver");
-			    conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+//			    conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","hr","hr");
+			   conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","lis","lis");
 			    statement=conn.createStatement();
 				 //JOptionPane.showMessageDialog(null, "Successfully Connected to Oracle");
 			    

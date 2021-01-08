@@ -196,10 +196,10 @@ public class Transection extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					boolean fine = false;
-					// String yr=comboBoxYear.getSelectedItem().toString();
+
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
-					// System.out.println("StudentClass:"+yr);
+					String yr = stu_id.substring(2, 4);
+
 					if (!checkPaid(stu_id, "January")) {
 
 						boolean due = checkDueTuitionFee(stu_id, "January");
@@ -225,8 +225,7 @@ public class Transection extends JFrame {
 						if (scholarship > 0) {
 							deductSchTimeperiod++;
 						}
-					}
-					else
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for Januray");
 
 				} catch (Exception e) {
@@ -252,35 +251,35 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
 					boolean due = checkDueTuitionFee(stu_id, "February");
 					if (!checkPaid(stu_id, "February")) {
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "February");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "February");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "February");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "February");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "February");
+								getLateFeeFine("February");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "February");
-							getLateFeeFine("February");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "February");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						// update time period table for scholarship
-						// updateScholarshipTimePeriod(stu_id);
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							// update time period table for scholarship
+							// updateScholarshipTimePeriod(stu_id);
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for February");
 
 				} catch (Exception e) {
@@ -306,37 +305,37 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "March")){
-					boolean due = checkDueTuitionFee(stu_id, "March");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "March");
+					if (!checkPaid(stu_id, "March")) {
+						boolean due = checkDueTuitionFee(stu_id, "March");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "March");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "March");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "March");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "March");
+								getLateFeeFine("March");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "March");
-							getLateFeeFine("March");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "March");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
+						double scholarship = getScholarship(stu_id, tFee);
 
-					if (scholarship > 0) {
-						// update time period table for scholarship
-						// updateScholarshipTimePeriod(stu_id);
-						deductSchTimeperiod++;
-					}
-				}
-				else
-					JOptionPane.showMessageDialog(null, "Already Paid for March");
+						if (scholarship > 0) {
+							// update time period table for scholarship
+							// updateScholarshipTimePeriod(stu_id);
+							deductSchTimeperiod++;
+						}
+					} else
+						JOptionPane.showMessageDialog(null, "Already Paid for March");
 
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -361,34 +360,34 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "April")){
-					boolean due = checkDueTuitionFee(stu_id, "April");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "April");
+					if (!checkPaid(stu_id, "April")) {
+						boolean due = checkDueTuitionFee(stu_id, "April");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "April");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "April");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "April");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "April");
+								getLateFeeFine("April");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "April");
-							getLateFeeFine("April");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "April");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-				}
-				else
-					JOptionPane.showMessageDialog(null, "Already Paid for April");
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
+						JOptionPane.showMessageDialog(null, "Already Paid for April");
 
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -412,33 +411,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "May")){
-					boolean due = checkDueTuitionFee(stu_id, "May");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "May");
+					if (!checkPaid(stu_id, "May")) {
+						boolean due = checkDueTuitionFee(stu_id, "May");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "May");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "May");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "May");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "May");
+								getLateFeeFine("May");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "May");
-							getLateFeeFine("May");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "May");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for May");
 
 				} catch (Exception e) {
@@ -463,33 +462,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "Jun")){
-					boolean due = checkDueTuitionFee(stu_id, "Jun");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "Jun");
+					if (!checkPaid(stu_id, "Jun")) {
+						boolean due = checkDueTuitionFee(stu_id, "Jun");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "Jun");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "Jun");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "Jun");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "Jun");
+								getLateFeeFine("Jun");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "Jun");
-							getLateFeeFine("Jun");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "Jun");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for Jun");
 
 				} catch (Exception e) {
@@ -514,33 +513,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "July")){
-					boolean due = checkDueTuitionFee(stu_id, "July");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "July");
+					if (!checkPaid(stu_id, "July")) {
+						boolean due = checkDueTuitionFee(stu_id, "July");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "July");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "July");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "July");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "July");
+								getLateFeeFine("July");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "July");
-							getLateFeeFine("July");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "July");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for July");
 
 				} catch (Exception e) {
@@ -566,33 +565,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "August")){
-					boolean due = checkDueTuitionFee(stu_id, "August");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "August");
+					if (!checkPaid(stu_id, "August")) {
+						boolean due = checkDueTuitionFee(stu_id, "August");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "August");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "August");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "August");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "August");
+								getLateFeeFine("August");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "August");
-							getLateFeeFine("August");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "August");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for August");
 
 				} catch (Exception e) {
@@ -619,33 +618,33 @@ public class Transection extends JFrame {
 					// String yr=comboBoxYear.getSelectedItem().toString();
 
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
-					if(!checkPaid(stu_id, "September")){
+					String yr = stu_id.substring(2, 4);
+					if (!checkPaid(stu_id, "September")) {
 
-					boolean due = checkDueTuitionFee(stu_id, "September");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "September");
+						boolean due = checkDueTuitionFee(stu_id, "September");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "September");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "September");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "September");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "September");
+								getLateFeeFine("September");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "September");
-							getLateFeeFine("September");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "September");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for September");
 
 				} catch (Exception e) {
@@ -671,33 +670,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "October")){
-					boolean due = checkDueTuitionFee(stu_id, "October");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "October");
+					if (!checkPaid(stu_id, "October")) {
+						boolean due = checkDueTuitionFee(stu_id, "October");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "October");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "October");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "October");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "October");
+								getLateFeeFine("October");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "October");
-							getLateFeeFine("October");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "October");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for October");
 
 				} catch (Exception e) {
@@ -723,33 +722,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "November")){
-					boolean due = checkDueTuitionFee(stu_id, "November");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "November");
+					if (!checkPaid(stu_id, "November")) {
+						boolean due = checkDueTuitionFee(stu_id, "November");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "November");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "November");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "November");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "November");
+								getLateFeeFine("November");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "November");
-							getLateFeeFine("November");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "November");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for November");
 
 				} catch (Exception e) {
@@ -775,33 +774,33 @@ public class Transection extends JFrame {
 					boolean fine = false;
 					// String yr=comboBoxYear.getSelectedItem().toString();
 					String stu_id = textFieldStudentId.getText();
-					String yr = stu_id.substring(0, 2);
+					String yr = stu_id.substring(2, 4);
 
-					if(!checkPaid(stu_id, "December")){
-					boolean due = checkDueTuitionFee(stu_id, "December");
-					if (due) {
-						fine = checkLateFeeAllownces(stu_id, "December");
+					if (!checkPaid(stu_id, "December")) {
+						boolean due = checkDueTuitionFee(stu_id, "December");
+						if (due) {
+							fine = checkLateFeeAllownces(stu_id, "December");
 
-						if (fine) {
-							System.out.println("Allownces Free");
+							if (fine) {
+								System.out.println("Allownces Free");
 
-							getTuitionFee(yr, stu_id, "monthly", "December");
-							fine = false;
+								getTuitionFee(yr, stu_id, "monthly", "December");
+								fine = false;
+							} else {
+								// System.out.println("get tuition fee with
+								// fine");
+								getTuitionFee(yr, stu_id, "monthly", "December");
+								getLateFeeFine("December");
+
+							}
 						} else {
-							// System.out.println("get tuition fee with fine");
 							getTuitionFee(yr, stu_id, "monthly", "December");
-							getLateFeeFine("December");
-
 						}
-					} else {
-						getTuitionFee(yr, stu_id, "monthly", "December");
-					}
-					double scholarship = getScholarship(stu_id, tFee);
-					if (scholarship > 0) {
-						deductSchTimeperiod++;
-					}
-					}
-					else
+						double scholarship = getScholarship(stu_id, tFee);
+						if (scholarship > 0) {
+							deductSchTimeperiod++;
+						}
+					} else
 						JOptionPane.showMessageDialog(null, "Already Paid for December");
 
 				} catch (Exception e) {
@@ -824,7 +823,7 @@ public class Transection extends JFrame {
 		scrollPane_1.setViewportView(tableFeePaid);
 
 		JPanel panel_TermFee = new JPanel();
-		tabbed_food.addTab(" Fees", null, panel_TermFee, null);
+		tabbed_food.addTab("Others Fee", null, panel_TermFee, null);
 		panel_TermFee.setLayout(null);
 
 		JPanel panel_5 = new JPanel();
@@ -2007,7 +2006,7 @@ public class Transection extends JFrame {
 			PreparedStatement prstatement = connection.prepareStatement(query);
 			ResultSet result = prstatement.executeQuery();
 			if (result.next()) {
-				
+
 				prstatement.close();
 				result.close();
 				return true;
@@ -2019,7 +2018,6 @@ public class Transection extends JFrame {
 			e.printStackTrace();
 		}
 
-		
 		return false;
 	}
 
@@ -2112,8 +2110,8 @@ public class Transection extends JFrame {
 
 	protected void getTransportFare(String mnth) {
 		// TODO Auto-generated method stub
-//		String sid = comboBoxStudentID.getSelectedItem().toString();
-		String sid=textFieldStudentId.getText();
+		// String sid = comboBoxStudentID.getSelectedItem().toString();
+		String sid = textFieldStudentId.getText();
 		String query = "select vehichle from lis_student_info where stu_id='" + sid + "'";
 		String veNo = null;
 		try {
@@ -2217,8 +2215,14 @@ public class Transection extends JFrame {
 		String p_id = comboBoxFeeName.getSelectedItem().toString();
 		String feeId = comboBoxFeeID.getSelectedItem().toString();
 		productname = p_id;
-		String query = "select amount from lis_fee_setup where fee_id='" + feeId + "' and applicable_for='" + clas
-				+ "' ";
+		String stu_id = textFieldStudentId.getText();
+
+		String applyFor = getApplyfor(stu_id.substring(2, 4));
+
+		// String query = "select amount from lis_fee_setup where fee_id='" +
+		// feeId + "' and applicable_for='"+clas+"' ";
+//		String query = "select amount from lis_fee_setup where fee_id='" + feeId + "' and applicable_for='" + applyFor+ "' ";
+		String query = "select amount from lis_fee_setup where fee_id='" + feeId + "' ";
 		try {
 			PreparedStatement prstatement = connection.prepareStatement(query);
 			ResultSet result = prstatement.executeQuery();
@@ -2235,6 +2239,33 @@ public class Transection extends JFrame {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
+	}
+
+	private String getApplyfor(String yr) {
+		String applyFor = null;
+
+		if (yr.equals("00"))
+			applyFor = "Nursery";
+		else if (yr.equals("01"))
+			applyFor = "Play";
+		else if (yr.equals("02"))
+			applyFor = "One";
+		else if (yr.equals("03"))
+			applyFor = "Two";
+		else if (yr.equals("04"))
+			applyFor = "Three";
+		else if (yr.equals("05"))
+			applyFor = "Four";
+		else if (yr.equals("06"))
+			applyFor = "Five";
+		else if (yr.equals("07"))
+			applyFor = "Six";
+		else if (yr.equals("08"))
+			applyFor = "Seven";
+		else
+			applyFor = "All";
+
+		return applyFor;
 	}
 
 	protected void updateScholarshipTimePeriod(String stu_id) {
@@ -2434,11 +2465,6 @@ public class Transection extends JFrame {
 		i = 0;
 	}
 
-	private int indexOf(String string) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 	protected void clearStudentInfo() {
 		// TODO Auto-generated method stub
 		comboBoxYear.setSelectedIndex(0);
@@ -2446,52 +2472,27 @@ public class Transection extends JFrame {
 		// comboBoxStudentID.setSelectedIndex(0);
 		// comboBoxPicnicPlace.setSelectedIndex(0);
 		textFieldStudentName.setText("");
+		textFieldStudentId.setText(null);
 
 	}
 
-	/*
-	 * private void getPicnicPlace() { // TODO Auto-generated method stub String
-	 * query="select fee_id from LIS_FEE_SETUP where fee_name='Picnic'";
-	 * 
-	 * try { PreparedStatement prstatement=connection.prepareStatement(query);
-	 * ResultSet result=prstatement.executeQuery(); while(result.next()){
-	 * comboBoxPicnicPlace.addItem(result.getString("FEE_ID"));
-	 * 
-	 * }
-	 * 
-	 * } catch (Exception e) { JOptionPane.showMessageDialog(null, e);
-	 * //e.printStackTrace(); }
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
 	int i = 0;
 
 	protected void getTuitionFee(String yr, String stu_id, String monthly, String monthName) {
-		// String query="Select product_name,sales_price from productdetails
-		// where product_id='"+product+"'";
-		String f_id = "tutionfee" + yr;
-		// System.out.println("feeid:" + f_id);
-		month[i++] = monthName;
-		String query = "Select * from lis_product_price_setup where product_id='" + f_id + "'";// this
-																								// is
-																								// for
-																								// offer
-																								// query
 
+		String applyFor = getApplyfor(yr);
+		System.out.println("applyfor:" + applyFor);
+		month[i++] = monthName;
+		String query = "Select * from lis_fee_setup where applicable_for='" + applyFor + "'";
 		try {
 			PreparedStatement prstatement = connection.prepareStatement(query);
 			ResultSet rs = prstatement.executeQuery();
 
-			if (rs.next()) { // if any product got offer like 3 for £1,so
-								// tracking the offered product id
-				// System.out.print("HELLOO");
+			if (rs.next()) {
 
-				// System.out.print(rs.getString("AMOUNT"));
 				productname = monthName;
-				String p_id = rs.getString("PRODUCT_ID");
-				String str2 = rs.getString("SALES_PRICE");
+				String p_id = rs.getString("FEE_NAME");
+				String str2 = rs.getString("AMOUNT");
 				tFee = Double.parseDouble(str2); // deduct scholarship from
 													// tuition fee
 
@@ -2792,7 +2793,7 @@ public class Transection extends JFrame {
 	private void report() {
 		// making report
 		try {
-			JasperDesign jd = JRXmlLoader.load("C:\\lis\\transection.jrxml");
+			JasperDesign jd = JRXmlLoader.load("C:\\lis\\report\\transection.jrxml");
 
 			// JasperDesign
 			// jd=JRXmlLoader.load("C:\\Users\\creativepc\\workspace\\GuiPractice\\shoppingCartReport.jrxml");
@@ -2953,7 +2954,7 @@ public class Transection extends JFrame {
 			sale = total;
 		}
 
-		String query = "insert into cash_details values(?,?,?,?,?)";
+		String query = "insert into lis_cash_details values(?,?,?,?,?)";
 		try {
 			PreparedStatement prst = connection.prepareStatement(query);
 

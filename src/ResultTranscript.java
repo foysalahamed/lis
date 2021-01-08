@@ -389,7 +389,12 @@ public class ResultTranscript extends JFrame {
    		String yr=comboBoxYear.getSelectedItem().toString();
 		
 		
-			String query="select si.firstname,si.lastname,si.year,si.section,si.student_roll,spi.fathers_name,spi.mothers_name,sr.course_id,cd.course_name,sr.grade,sr.gpa,sr.remarks,ex.exam_name from lis_student_info si join lis_parents_info spi on si.stu_id=spi.stu_id join lis_result_setup sr on si.stu_id=sr.stu_id join lis_course cd on cd.course_id=sr.course_id join lis_exam_setup ex on ex.exam_id=sr.exam_id where sr.exam_id='"+e_id+"' and sr.stu_id='"+s_id+"' and sr.year='"+yr+"'";
+			String query="select si.firstname,si.lastname,si.year,si.section,si.student_roll,spi.fathers_name,"
+					+ "spi.mothers_name,sr.course_id,cd.course_name,sr.marks,sr.grade,sr.gpa,sr.remarks,ex.exam_name "
+					+ "from lis_student_info si join lis_parents_info spi on si.stu_id=spi.stu_id "
+					+ "join lis_result_setup sr on si.stu_id=sr.stu_id join lis_course cd "
+					+ "on cd.course_id=sr.course_id join lis_exam_setup ex on ex.exam_id=sr.exam_id "
+					+ "where sr.exam_id='"+e_id+"' and sr.stu_id='"+s_id+"' and sr.year='"+yr+"'";
 			
 		
 		

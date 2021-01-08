@@ -56,30 +56,9 @@ import javax.swing.JTextArea;
 public class PayrollSetup extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_6;
-	private JTextField textField_5;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
 	private JTable tableEmployeeList;
 	private JTable tableIncrement;
 	Connection connection=null;
-	private JTextField textFieldEmpId;
 	String allwonceName;
 	String deductionName;
 	JTextArea textAreaMessages;
@@ -143,7 +122,7 @@ public class PayrollSetup extends JFrame {
 		Image imgattnsta=new ImageIcon(this.getClass().getResource("/lblbac1.png")).getImage();
 		
 		JPanel panelEmpLoan = new JPanel();
-		tabbedPane.addTab("Employee Loan ", null, panelEmpLoan, null);
+		tabbedPane.addTab("Loan ", null, panelEmpLoan, null);
 		tabbedPane.setBackgroundAt(0, new Color(255, 228, 225));
 		panelEmpLoan.setLayout(null);
 		
@@ -154,200 +133,10 @@ public class PayrollSetup extends JFrame {
 		panel.setBorder(new LineBorder(Color.WHITE));
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Basic Salary");
-		lblNewLabel.setBounds(282, 57, 86, 14);
-		panel.add(lblNewLabel);
-		
-		textField = new JTextField();
-		textField.setBounds(368, 54, 109, 20);
-		panel.add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblEmployeeId = new JLabel("Emp ID");
-		lblEmployeeId.setBounds(29, 59, 68, 14);
-		panel.add(lblEmployeeId);
-		
-		JLabel lblHouseRent = new JLabel("House Rent");
-		lblHouseRent.setBounds(282, 76, 68, 14);
-		panel.add(lblHouseRent);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(368, 73, 109, 20);
-		panel.add(textField_1);
-		
-		JLabel lblMedical = new JLabel("Medical");
-		lblMedical.setBounds(282, 96, 68, 14);
-		panel.add(lblMedical);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(368, 93, 109, 20);
-		panel.add(textField_2);
-		
-		JLabel lblLunch = new JLabel("Lunch");
-		lblLunch.setBounds(282, 116, 68, 14);
-		panel.add(lblLunch);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(368, 113, 109, 20);
-		panel.add(textField_3);
-		
-		JLabel lblBonus = new JLabel("Bonus");
-		lblBonus.setBounds(282, 156, 68, 14);
-		panel.add(lblBonus);
-		
-		JLabel lblTada = new JLabel("TA/DA");
-		lblTada.setBounds(282, 176, 68, 14);
-		panel.add(lblTada);
-		
-		JLabel lblTransport = new JLabel("Transport");
-		lblTransport.setBounds(282, 136, 68, 14);
-		panel.add(lblTransport);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(368, 133, 109, 20);
-		panel.add(textField_4);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(368, 173, 109, 20);
-		panel.add(textField_6);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBackground(Color.WHITE);
-		comboBox_1.setBounds(368, 153, 109, 20);
-		panel.add(comboBox_1);
-		
-		JLabel lblHours_1 = new JLabel("Hours");
-		lblHours_1.setBounds(31, 154, 68, 14);
-		panel.add(lblHours_1);
-		
-		JLabel lblDays_1 = new JLabel("Days");
-		lblDays_1.setBounds(31, 134, 68, 14);
-		panel.add(lblDays_1);
-		
-		JLabel lblHours = new JLabel("Designation");
-		lblHours.setBounds(29, 97, 68, 14);
-		panel.add(lblHours);
-		
-		JLabel lblDays = new JLabel("Name");
-		lblDays.setBounds(29, 77, 68, 14);
-		panel.add(lblDays);
-		
-		JLabel label_4 = new JLabel("----------");
-		label_4.setBounds(112, 154, 114, 14);
-		panel.add(label_4);
-		
-		JLabel label_5 = new JLabel("----------");
-		label_5.setBounds(112, 134, 114, 14);
-		panel.add(label_5);
-		
-		JLabel label_6 = new JLabel("Transport");
-		label_6.setBounds(110, 97, 114, 14);
-		panel.add(label_6);
-		
-		JLabel labelEmpName = new JLabel("");
-		labelEmpName.setBounds(110, 77, 114, 14);
-		panel.add(labelEmpName);
-		
-		JLabel lblPaymentType = new JLabel("Payment Type");
-		lblPaymentType.setBounds(28, 114, 86, 14);
-		panel.add(lblPaymentType);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Select", "Monthly", "Hourly", "Contract"}));
-		comboBox_2.setBackground(Color.WHITE);
-		comboBox_2.setBounds(110, 113, 109, 20);
-		panel.add(comboBox_2);
-		
-		JLabel lblOverTime = new JLabel("Rate/Hrs");
-		lblOverTime.setBounds(29, 176, 61, 14);
-		panel.add(lblOverTime);
-		
-		JLabel lblOverTime_1 = new JLabel("Over Time");
-		lblOverTime_1.setBounds(31, 195, 68, 14);
-		panel.add(lblOverTime_1);
-		
-		JLabel label_2 = new JLabel("----------");
-		label_2.setBounds(112, 195, 114, 14);
-		panel.add(label_2);
-		
-		JLabel label_8 = new JLabel("Rate/Hrs");
-		label_8.setBounds(29, 217, 61, 14);
-		panel.add(label_8);
-		
-		JLabel lblPayTo = new JLabel("Pay To");
-		lblPayTo.setBounds(29, 236, 86, 14);
-		panel.add(lblPayTo);
-		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Select", "Bank", "Cash in Hand"}));
-		comboBox_3.setBackground(Color.WHITE);
-		comboBox_3.setBounds(109, 235, 109, 20);
-		panel.add(comboBox_3);
-		
-		textField_15 = new JTextField();
-		textField_15.setBounds(110, 173, 109, 20);
-		panel.add(textField_15);
-		textField_15.setColumns(10);
-		
-		textField_16 = new JTextField();
-		textField_16.setBounds(110, 214, 109, 20);
-		panel.add(textField_16);
-		textField_16.setColumns(10);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(29, 261, 453, 101);
-		panel.add(panel_3);
-		panel_3.setLayout(null);
-		
-		JLabel lblBankName = new JLabel("Bank Name");
-		lblBankName.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblBankName.setBounds(22, 32, 95, 14);
-		panel_3.add(lblBankName);
-		
-		textField_17 = new JTextField();
-		textField_17.setEditable(false);
-		textField_17.setColumns(10);
-		textField_17.setBounds(161, 29, 86, 20);
-		panel_3.add(textField_17);
-		
-		textField_18 = new JTextField();
-		textField_18.setEditable(false);
-		textField_18.setColumns(10);
-		textField_18.setBounds(161, 50, 86, 20);
-		panel_3.add(textField_18);
-		
-		JLabel lblAccountNo = new JLabel("Account No");
-		lblAccountNo.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblAccountNo.setBounds(20, 53, 136, 14);
-		panel_3.add(lblAccountNo);
-		
-		JLabel lblAddress = new JLabel("Address");
-		lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblAddress.setBounds(20, 74, 95, 14);
-		panel_3.add(lblAddress);
-		
-		textField_19 = new JTextField();
-		textField_19.setEditable(false);
-		textField_19.setColumns(10);
-		textField_19.setBounds(161, 71, 86, 20);
-		panel_3.add(textField_19);
-		
-		JLabel lblBankDetails = new JLabel("Bank Details");
-		lblBankDetails.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblBankDetails.setBounds(159, 4, 95, 14);
-		panel_3.add(lblBankDetails);
-		
-		JLabel lblNewLabel_1 = new JLabel("Salary");
+		JLabel lblNewLabel_1 = new JLabel("Employee Info");
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		lblNewLabel_1.setForeground(new Color(255, 228, 181));
-		lblNewLabel_1.setBounds(20, 13, 46, 14);
+		lblNewLabel_1.setForeground(new Color(178, 34, 34));
+		lblNewLabel_1.setBounds(20, 13, 135, 14);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblSalr = new JLabel("");
@@ -355,138 +144,7 @@ public class PayrollSetup extends JFrame {
 		panel.add(lblSalr);
 		Image imgsal=new ImageIcon(this.getClass().getResource("/lblbac1.png")).getImage();
 		lblSalr.setIcon(new ImageIcon(imgsal));
-		
-		textFieldEmpId = new JTextField();
-		textFieldEmpId.setEditable(false);
-		textFieldEmpId.setColumns(10);
-		textFieldEmpId.setBounds(107, 54, 109, 20);
-		panel.add(textFieldEmpId);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(512, 303, 330, 99);
-		panelEmpLoan.add(panel_2);
-		panel_2.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-		panel_2.setBackground(Color.WHITE);
-		panel_2.setLayout(null);
-		
-		JLabel label = new JLabel("Net Pay:  TK");
-		label.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label.setBounds(39, 71, 95, 14);
-		panel_2.add(label);
-		
-		textField_12 = new JTextField();
-		textField_12.setEditable(false);
-		textField_12.setColumns(10);
-		textField_12.setBounds(150, 68, 86, 20);
-		panel_2.add(textField_12);
-		
-		JLabel label_1 = new JLabel("Total Deduction:  TK");
-		label_1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_1.setBounds(10, 50, 136, 14);
-		panel_2.add(label_1);
-		
-		textField_13 = new JTextField();
-		textField_13.setEditable(false);
-		textField_13.setColumns(10);
-		textField_13.setBounds(150, 47, 86, 20);
-		panel_2.add(textField_13);
-		
-		textField_14 = new JTextField();
-		textField_14.setEditable(false);
-		textField_14.setColumns(10);
-		textField_14.setBounds(150, 26, 86, 20);
-		panel_2.add(textField_14);
-		
-		JLabel label_3 = new JLabel("Total Pay:  TK");
-		label_3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_3.setBounds(45, 29, 95, 14);
-		panel_2.add(label_3);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(512, 11, 373, 285);
-		panelEmpLoan.add(panel_1);
-		panel_1.setBackground(Color.WHITE);
-		panel_1.setBorder(new LineBorder(Color.WHITE));
-		panel_1.setLayout(null);
-		
-		JLabel lblOthers_1 = new JLabel("Others");
-		lblOthers_1.setBounds(31, 154, 68, 14);
-		panel_1.add(lblOthers_1);
-		
-		JLabel lblOthers = new JLabel("Provident Fund");
-		lblOthers.setBounds(31, 134, 79, 14);
-		panel_1.add(lblOthers);
-		
-		JLabel lblInsurance = new JLabel("Insurance");
-		lblInsurance.setBounds(31, 114, 68, 14);
-		panel_1.add(lblInsurance);
-		
-		JLabel lblLoan = new JLabel("Loan");
-		lblLoan.setBounds(31, 94, 68, 14);
-		panel_1.add(lblLoan);
-		
-		JLabel lblProvidentFund = new JLabel("Tax ");
-		lblProvidentFund.setBounds(31, 75, 79, 14);
-		panel_1.add(lblProvidentFund);
-		
-		JLabel lblTax = new JLabel("Tax ID");
-		lblTax.setBounds(31, 53, 68, 14);
-		panel_1.add(lblTax);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(115, 74, 109, 20);
-		panel_1.add(textField_5);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(115, 93, 109, 20);
-		panel_1.add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(115, 113, 109, 20);
-		panel_1.add(textField_8);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(115, 133, 109, 20);
-		panel_1.add(textField_9);
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(115, 153, 109, 20);
-		panel_1.add(textField_10);
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(115, 54, 109, 20);
-		panel_1.add(textField_11);
-		
-		JLabel lblDeduction = new JLabel("Deduction");
-		lblDeduction.setForeground(new Color(255, 228, 181));
-		lblDeduction.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		lblDeduction.setBounds(20, 13, 310, 14);
-		panel_1.add(lblDeduction);
-		
-		JLabel labelDed = new JLabel("");
-		labelDed.setBounds(10, 11, 353, 20);
-		panel_1.add(labelDed);
-		labelDed.setIcon(new ImageIcon(imgded));
-		
-		JButton btnNewButton = new JButton("Save");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setBounds(203, 417, 89, 23);
-		panelEmpLoan.add(btnNewButton);
 		Image imgbtn=new ImageIcon(this.getClass().getResource("/btnbac.png")).getImage();
-		btnNewButton.setIcon(new ImageIcon(imgbtn));
-		
-		JButton btnNewButton_1 = new JButton("Edit");
-		btnNewButton_1.setBounds(308, 417, 89, 23);
-		panelEmpLoan.add(btnNewButton_1);
 		
 		JPanel panelPaySlip = new JPanel();
 		tabbedPane.addTab("Pay Slip", null, panelPaySlip, null);
@@ -2038,7 +1696,7 @@ public class PayrollSetup extends JFrame {
 		ResultSet result=prstatement.executeQuery();
 		//Date date;
 		while(result.next()){
-			textFieldEmpId.setText(result.getString("EMP_ID"));
+//			textFieldEmpId.setText(result.getString("EMP_ID"));
 			//textField.setText(result.getString("FIRSTNAME"));
 			
 			//textFieldLastName.setText(result.getString("LASTNAME"));
