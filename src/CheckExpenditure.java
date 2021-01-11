@@ -88,7 +88,7 @@ public class CheckExpenditure extends JFrame {
 		JButton btnCheck = new JButton("Check");
 		btnCheck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String expDate=((JTextField)dateChooser.getDateEditor().getUiComponent()).getText() ;
+				String expDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooser.getDateEditor().getUiComponent()).getText()) ;
 				String query="select * from lis_expenditure where expdate='"+expDate+"'";
 				try {
 

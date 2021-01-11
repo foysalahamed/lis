@@ -655,8 +655,13 @@ public class StudentRegistration extends JFrame {
 		}else {
 			vhc=comboBoxVehichleNo.getSelectedItem().toString();
 		}
-
-		String query="update lis_student_info set firstname='"+textFieldFirstName.getText()+"',lastname='"+textFieldLastName.getText()+"',birthdate='"+((JTextField)dateChooserBirthDate.getDateEditor().getUiComponent()).getText()+"',year='"+(String)comboBoxYear.getSelectedItem()+"',student_roll='"+textFieldStudentRoll.getText()+"',section='"+(String)comboBoxGroup.getSelectedItem()+"',mobile='"+textFieldMobile.getText()+"',religion='"+(String)comboBoxReligion.getSelectedItem()+"',email='"+textFieldEmail.getText()+"',sex='"+gander+"',vehichle='"+vhc+"',status='"+studentStatus+"' where stu_id='"+textFieldStuID.getText()+"'";
+		String bDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserBirthDate.getDateEditor().getUiComponent()).getText());
+		String query="update lis_student_info set firstname='"+textFieldFirstName.getText()+"',lastname='"+textFieldLastName.getText()+"',"
+				+ "birthdate='"+bDate+"',"
+						+ "year='"+(String)comboBoxYear.getSelectedItem()+"',student_roll='"+textFieldStudentRoll.getText()+"',"
+								+ "section='"+(String)comboBoxGroup.getSelectedItem()+"',mobile='"+textFieldMobile.getText()+"',"
+										+ "religion='"+(String)comboBoxReligion.getSelectedItem()+"',email='"+textFieldEmail.getText()+"',"
+												+ "sex='"+gander+"',vehichle='"+vhc+"',status='"+studentStatus+"' where stu_id='"+textFieldStuID.getText()+"'";
 		try {
 			PreparedStatement prstatement=connection.prepareStatement(query);
 			prstatement.executeQuery(query);
@@ -796,6 +801,7 @@ public class StudentRegistration extends JFrame {
 		
 		//connection=DbConnection.dbconnection();
 		
+		
 		try {
 			PreparedStatement prStatement= connection.prepareStatement(query);
 			
@@ -803,7 +809,8 @@ public class StudentRegistration extends JFrame {
 		prStatement.setString(2,textFieldFirstName.getText() );
 		prStatement.setString(3,textFieldLastName.getText() );
 		
-		prStatement.setString(4,((JTextField)dateChooserBirthDate.getDateEditor().getUiComponent()).getText() );
+		prStatement.setString(4,new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserBirthDate.getDateEditor().getUiComponent()).getText() ));
+				
 		prStatement.setString(5,(String)comboBoxYear.getSelectedItem() );
 		prStatement.setString(6,textFieldStudentRoll.getText() );
 		prStatement.setString(7,textFieldMobile.getText() );

@@ -127,7 +127,8 @@ public class StudentsAttendance extends JFrame {
 								prst.setString(2, table.getValueAt(r, 1).toString());
 								prst.setString(3, table.getValueAt(r, 2).toString());
 								prst.setString(4, table.getValueAt(r, 3).toString());		
-								prst.setString(5, ((JTextField)dateChooserAttn.getDateEditor().getUiComponent()).getText() );
+								prst.setString(5,new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserAttn.getDateEditor().getUiComponent()).getText() )); 
+										
 			        			boolean y=Boolean.valueOf(table.getValueAt(r, 4).toString());
 			        			if(y==true){
 									prst.setString(6, "P" );
@@ -219,7 +220,8 @@ public class StudentsAttendance extends JFrame {
 		String stuid[]=new String[800];
 		int i=0;
 		
-		String dt=((JTextField)dateChooserAttn.getDateEditor().getUiComponent()).getText();
+		String dt=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserAttn.getDateEditor().getUiComponent()).getText() );
+				
 		String query="select stu_id from LIS_STUDENTS_ATTENDANCE where  attn_status='"+"Leave"+"' and attn_date='"+dt+"' and year='"+yr+"'";
 		try{
 			PreparedStatement prstatement=connection.prepareStatement(query);

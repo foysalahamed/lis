@@ -140,8 +140,10 @@ public class AttendanceCheck extends JFrame {
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String stuid=textFieldStuID.getText();
-				String dFrom=((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText();
-				String dto=((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText();
+				String dFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText() );
+						
+				String dto=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText() );
+						
 				String query="select * from LIS_STUDENTS_ATTENDANCE where stu_id='"+stuid+"' and attn_date between '"+dFrom+"' and '"+dto+"' order by attn_date asc";
 				String rpPath="C:\\lis\\report\\reportAttendance.jrxml";
 				report( dFrom, dto,query,rpPath);
@@ -205,8 +207,10 @@ public class AttendanceCheck extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String empid=textFieldEmpId.getText();
-				String dFrom=((JTextField)dateChooserFrm.getDateEditor().getUiComponent()).getText();
-				String dto=((JTextField)dateChooserTO.getDateEditor().getUiComponent()).getText();
+				String dFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrm.getDateEditor().getUiComponent()).getText() );
+						
+				String dto=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTO.getDateEditor().getUiComponent()).getText() );
+						
 				String query;
 				if(allemp==true){
 					query="select * from LIS_SESSIONS where LOGIN_TIME between '"+dFrom+"' and '"+dto+"' order by LOGIN_TIME asc";
@@ -388,8 +392,10 @@ public class AttendanceCheck extends JFrame {
 		// TODO Auto-generated method stub
 		
 		
-		String dFrom=((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText();
-		String dto=((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText();
+		String dFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText() );
+				
+		String dto=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText() );
+				
 
 		try {
 			String q="select * from LIS_STUDENTS_ATTENDANCE where stu_id='"+stuid+"' and attn_date between '"+dFrom+"' and '"+dto+"' order by attn_date asc";
@@ -410,8 +416,10 @@ public class AttendanceCheck extends JFrame {
 		
 		String q;
 		
-		String dFrom=((JTextField)dateChooserFrm.getDateEditor().getUiComponent()).getText();
-		String dto=((JTextField)dateChooserTO.getDateEditor().getUiComponent()).getText();
+		String dFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrm.getDateEditor().getUiComponent()).getText() );
+				
+		String dto=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTO.getDateEditor().getUiComponent()).getText() );
+				
 		if(empid.equals("all")){
 			 q="select * from lis_sessions where LOGIN_TIME between '"+dFrom+"' and '"+dto+"' order by LOGIN_TIME desc";
 			 allemp=true;

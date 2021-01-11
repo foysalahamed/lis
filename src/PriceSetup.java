@@ -414,12 +414,14 @@ public class PriceSetup extends JFrame {
 		button_6.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		button_6.setBounds(678, 248, 88, 25);
 		contentPane.add(button_6);
+		button_6.setVisible(false);
 		
 		JButton buttonOrderPlace = new JButton("Order Place");
 		buttonOrderPlace.setForeground(new Color(128, 0, 128));
 		buttonOrderPlace.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		buttonOrderPlace.setBounds(768, 249, 109, 25);
 		contentPane.add(buttonOrderPlace);
+		buttonOrderPlace.setVisible(false);
 		
 		JLabel label = new JLabel("Product Search");
 		label.setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -465,10 +467,15 @@ public class PriceSetup extends JFrame {
 		contentPane.add(comboBoxSearchBy);
 		
 		JButton button_8 = new JButton("All Products Report");
+		button_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		button_8.setForeground(new Color(128, 0, 128));
 		button_8.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		button_8.setBounds(725, 291, 146, 23);
 		contentPane.add(button_8);
+		button_8.setVisible(false);
 	}
 	
 	private JTable tableInventory;
@@ -493,7 +500,7 @@ public class PriceSetup extends JFrame {
 
 	protected void purchaseProducts() {
 		// TODO Auto-generated method stub
-		
+		String pDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText());
 		Employee emp=new Employee();
 		String empid=emp.getEmployeeID();
 		String query="Insert into LIS_PURCHASE_INVOICE_DETAILS values(?,?,?,?,?)";
@@ -503,7 +510,7 @@ public class PriceSetup extends JFrame {
 			prStatement.setString(1,textFieldP_InvoiceNo.getText() );
 			prStatement.setString(2,textFieldProductID.getText() );	
 			prStatement.setInt(3,Integer.parseInt(textFieldQuantity.getText()) );
-			prStatement.setString(4,((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText() );
+			prStatement.setString(4,pDate);
 			prStatement.setString(5,empid );
 			
 			
@@ -526,14 +533,14 @@ public class PriceSetup extends JFrame {
 	}
 
 	protected void editProductDetails() {
-		// TODO Auto-generated method stub
+		
 		String p_name=textFieldProductName.getText();
 		String p_des=textAreaDescription.getText();
 		String p_vendor=textFieldVendor.getText();
 		String p_weight=textFieldWeight.getText();
 		String p_pPrice=textFieldPurchasePrice.getText();
 		String p_sPrice=textFieldSalePrice.getText();
-		String p_date=((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText();
+		String p_date=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText());
 		String p_quantity=textFieldQuantity.getText();
 		double p_price=Double.parseDouble(p_pPrice);
 		double s_price=Double.parseDouble(p_sPrice);
@@ -666,7 +673,8 @@ public class PriceSetup extends JFrame {
 	}
 
 	protected void insertNewProduct() {
-		// TODO Auto-generated method stub
+		
+		String pDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText());
 		String query="Insert into LIS_PRODUCT_PRICE_SETUP values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement prStatement;
 		try {
@@ -679,7 +687,7 @@ public class PriceSetup extends JFrame {
 			prStatement.setInt(6,Integer.parseInt(textFieldQuantity.getText()) );
 			prStatement.setDouble(7,Double.parseDouble(textFieldPurchasePrice.getText() ));
 			prStatement.setDouble(8,Double.parseDouble(textFieldSalePrice.getText() ));
-			prStatement.setString(9,((JTextField)dateChooserDate.getDateEditor().getUiComponent()).getText());
+			prStatement.setString(9,pDate);
 			prStatement.setString(10,"employee_id" );
 			prStatement.setString(11,textFieldP_InvoiceNo.getText() );
 			prStatement.setString(12,String.valueOf(offer) );

@@ -131,8 +131,11 @@ public class PermissionForLeaves extends JFrame {
 		JButton btnAccept = new JButton("Accept");
 		btnAccept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String appFrom=((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText();
-				String appTo=((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText();
+				
+				String appFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText());
+						
+				String appTo=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText());
+						
 
 				String query="update LIS_APP_FOR_LEAVE set app_from='"+appFrom+"', app_to='"+appTo+"',status='"+"Accepted"+"' where app_id='"+applicationID+"'";
 				try {
@@ -157,8 +160,10 @@ public class PermissionForLeaves extends JFrame {
 		JButton btnDecline = new JButton("Decline");
 		btnDecline.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String appFrom=((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText();
-				String appTo=((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText();
+				String appFrom=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserFrom.getDateEditor().getUiComponent()).getText());
+						
+				String appTo=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserTo.getDateEditor().getUiComponent()).getText());
+						
 
 				String query="update LIS_APP_FOR_LEAVE set app_from='"+appFrom+"', app_to='"+appTo+"',status='"+"Declined"+"' where app_id='"+applicationID+"'";
 				try {

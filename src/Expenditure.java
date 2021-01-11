@@ -156,6 +156,7 @@ public class Expenditure extends JFrame {
 		JButton btnSave = new JButton("Save");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				String expDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserExpDate.getDateEditor().getUiComponent()).getText());
 				String query="Insert into LIS_EXPENDITURE values(?,?,?,?,?)";
 				
 				
@@ -164,7 +165,7 @@ public class Expenditure extends JFrame {
 					prStatement.setString(1,comboBoxType.getSelectedItem().toString() );
 					prStatement.setString(2,comboBoxName.getSelectedItem().toString() );
 					prStatement.setString(3,textFieldSlipNo.getText() );
-					prStatement.setString(4,((JTextField)dateChooserExpDate.getDateEditor().getUiComponent()).getText());
+					prStatement.setString(4,expDate);
 					prStatement.setString(5,textFieldAmount.getText() );
 					
 

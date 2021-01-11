@@ -459,8 +459,20 @@ public class EmployeeInfo extends JFrame {
 
 		    	private void update_info() {
 		    		// TODO Auto-generated method stub
+		    		String bDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserBirthdate.getDateEditor().getUiComponent()).getText());
+		    		String jDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserJoiningDate.getDateEditor().getUiComponent()).getText());
+		    		String eDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserEndingDate.getDateEditor().getUiComponent()).getText());
 		    		
-		    		 String query="update lis_employee_info set firstName='"+textFieldFirstName.getText()+"',lastName='"+textFieldLastNme.getText()+"',fathersname='"+textFieldFathersName.getText()+"',mothersname='"+textFieldMothersName.getText()+"',birthdate='"+((JTextField)dateChooserBirthdate.getDateEditor().getUiComponent()).getText()+"',mobile='"+textFieldMobile.getText()+"',religion='"+(String)comboBoxReligions.getSelectedItem()+"',merital='"+(String)comboBoxMeritalStatus.getSelectedItem()+"',email='"+textFieldEmail.getText()+"',sex='"+gander+"',joining_date='"+((JTextField)dateChooserJoiningDate.getDateEditor().getUiComponent()).getText()+"',ending_date='"+((JTextField)dateChooserEndingDate.getDateEditor().getUiComponent()).getText()+"',dept_id='"+comboBoxDeptID.getSelectedItem().toString()+"',job_status='"+jobStatus+"' where emp_id='"+textFieldEmpID.getText()+"'";
+		    		 String query="update lis_employee_info set firstName='"+textFieldFirstName.getText()+"',"
+		    		 		+ "lastName='"+textFieldLastNme.getText()+"',fathersname='"+textFieldFathersName.getText()+"',"
+		    		 				+ "mothersname='"+textFieldMothersName.getText()+"',"
+		    		 						+ "birthdate='"+bDate+"',"
+		    		 								+ "mobile='"+textFieldMobile.getText()+"',religion='"+(String)comboBoxReligions.getSelectedItem()+"',"
+		    		 										+ "merital='"+(String)comboBoxMeritalStatus.getSelectedItem()+"',email='"+textFieldEmail.getText()+"',"
+		    		 												+ "sex='"+gander+"',joining_date='"+jDate+"',"
+		    		 														+ "ending_date='"+eDate+"',"
+		    		 																+ "dept_id='"+comboBoxDeptID.getSelectedItem().toString()+"',job_status='"+jobStatus+"'"
+		    		 																		+ " where emp_id='"+textFieldEmpID.getText()+"'";
 		    			try {
 		    				PreparedStatement prstatement=connection.prepareStatement(query);
 		    				prstatement.executeQuery();
@@ -1234,7 +1246,11 @@ public class EmployeeInfo extends JFrame {
 	}
 
 	protected void inserData() {
-		// TODO Auto-generated method stu
+		
+		String bDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserBirthdate.getDateEditor().getUiComponent()).getText());
+		String jDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserJoiningDate.getDateEditor().getUiComponent()).getText());
+//		String eDate=new DateFormateSettings().dateFormateCorrection(((JTextField)dateChooserEndingDate.getDateEditor().getUiComponent()).getText());
+		
 		String query="Insert into LIS_EMPLOYEE_INFO values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 		//connection=DbConnection.dbconnection();
@@ -1247,7 +1263,7 @@ public class EmployeeInfo extends JFrame {
 		prStatement.setString(3,textFieldLastNme.getText() );
 		prStatement.setString(4,textFieldFathersName.getText() );
 		prStatement.setString(5,textFieldMothersName.getText() );
-		prStatement.setString(6,((JTextField)dateChooserBirthdate.getDateEditor().getUiComponent()).getText() );
+		prStatement.setString(6,bDate );
 		prStatement.setString(7,textFieldMobile.getText() );
 		prStatement.setString(8,(String)comboBoxReligions.getSelectedItem() );
 		prStatement.setString(9,(String)comboBoxMeritalStatus.getSelectedItem() );
@@ -1256,9 +1272,9 @@ public class EmployeeInfo extends JFrame {
 		prStatement.setString(11,gander );
 		prStatement.setBytes(12,person_image );
 
-		prStatement.setString(13,((JTextField)dateChooserJoiningDate.getDateEditor().getUiComponent()).getText() );
+		prStatement.setString(13,jDate );
 
-		prStatement.setString(14,((JTextField)dateChooserEndingDate.getDateEditor().getUiComponent()).getText() );
+		prStatement.setString(14,null);
 		prStatement.setString(15,comboBoxDeptID.getSelectedItem().toString() );
 		prStatement.setString(16,jobStatus );
 		prStatement.setString(17,textFieldTinNo.getText() );

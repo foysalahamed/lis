@@ -1365,9 +1365,12 @@ public class Transection extends JFrame {
 					PreparedStatement prst = connection.prepareStatement(query);
 					prst.setString(1, categories);
 					prst.setString(2, textFieldID.getText());
-					prst.setString(3, ((JTextField) dateChooserAppDate.getDateEditor().getUiComponent()).getText());
-					prst.setString(4, ((JTextField) dateChooserFrom.getDateEditor().getUiComponent()).getText());
-					prst.setString(5, ((JTextField) dateChooserTo.getDateEditor().getUiComponent()).getText());
+					prst.setString(3,new DateFormateSettings().dateFormateCorrection(((JTextField) dateChooserAppDate.getDateEditor().getUiComponent()).getText())) ; 
+							
+					prst.setString(4,new DateFormateSettings().dateFormateCorrection(((JTextField) dateChooserFrom.getDateEditor().getUiComponent()).getText())) ;
+							
+					prst.setString(5,new DateFormateSettings().dateFormateCorrection(((JTextField) dateChooserTo.getDateEditor().getUiComponent()).getText()));
+							
 					prst.setString(6, textAreaReasons.getText());
 					prst.setString(7, "New");
 					prst.executeQuery();
@@ -2076,7 +2079,8 @@ public class Transection extends JFrame {
 
 	protected void checkAppStatus() {
 		// TODO Auto-generated method stub
-		String appDate = ((JTextField) dateChooserCheckAppDate.getDateEditor().getUiComponent()).getText();
+		String appDate =new DateFormateSettings().dateFormateCorrection(((JTextField) dateChooserCheckAppDate.getDateEditor().getUiComponent()).getText()) ;
+				
 		String id = textFieldCheckID.getText();
 		String query = "select status from LIS_APP_FOR_LEAVE where id='" + id + "' and app_date='" + appDate + "'";
 		String st = null;
